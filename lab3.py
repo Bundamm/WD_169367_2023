@@ -4,13 +4,12 @@ def nowa_funkcja(argument1,argument2=1):
     argument1 = argument2
     return argument1
 
-
 print(nowa_funkcja(argument1=2))
-
 
 print("Podaj argumenty funkcji liniowej: ")
 a = int(input())
 b = int(input())
+
 def zad1(a,b):
     if a < 0:
         print("Funkcja",a,"x +",b,"jest malejaca.")
@@ -111,8 +110,23 @@ def multiply_game():
             wrong+=1
     print("Koniec gry!\nBledne odpowiedzi: ",wrong,'\nPoprawne odpowiedzi: ',correct,sep='')
 multiply_game()
-
-# size = int(input())
-# first = size//2+1
-# print(int(first))
-#for i in range(size):
+print("Wprowadz wysokosc: ")
+h = int(input())
+j = 1
+for i in range(0,h):
+    spacje = " " *(h - i)
+    if i==0:
+        print(spacje,"*")
+    else:
+        spacje2 = j * " "
+        if(h//2 != i):
+            print(" ",spacje, "*", spacje2, "*", sep='')
+        else:
+            #wersja kolegi
+            #print(spacje, "*"*(((i+1)*2)-1))
+            #wersja moja
+            if(h%2==0):
+                print(spacje, "*"*(h+1))
+            else:
+                print(spacje, "*"*h)
+        j += 2
