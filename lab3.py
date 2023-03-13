@@ -25,7 +25,7 @@ a2= eval(input())
 def zad2(a1,a2):
     if a1==a2:
         print("Proste sa rownolegle.")
-    if a1*a2==-1:
+    elif a1*a2==-1:
         print("Proste sa prostopadle.")
     else:
         print("Nie sa ani rownolegle, ani prostopadle.")
@@ -120,7 +120,7 @@ for i in range(0,h):
     else:
         spacje2 = j * " "
         if(h//2 != i):
-            print(" ",spacje, "*", spacje2, "*", sep='')
+            print(" ",spacje, "*", spacje2, "*", sep ="")
         else:
             #wersja kolegi
             #print(spacje, "*"*(((i+1)*2)-1))
