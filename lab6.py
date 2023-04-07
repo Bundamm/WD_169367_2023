@@ -44,3 +44,31 @@ print(g.loc[g.groupby('Plec').idxmax()])
 print('\nh)\n')
 h = df.groupby(['Plec', 'Imie', 'Rok'])['Liczba'].sum()
 print(h.loc[h.groupby(['Plec', 'Rok']).idxmax()])
+
+#zad3
+df2 = pd.read_csv('zamowienia.csv', delimiter=';')
+#a
+print('a)')
+print(df2['Sprzedawca'].unique())
+#b
+print('b)')
+print(df2['Utarg'].nlargest(5))
+#c
+print('c)')
+print(df2['Sprzedawca'].value_counts())
+#d
+print('d)')
+print(df2.groupby('Kraj')['Utarg'].sum())
+#e
+print('e)')
+print(df2[(df2['Data zamowienia'].str.contains('2005')) & (df2['Kraj']=='Polska')]['Utarg'].sum())
+#f
+print('f)')
+print(df2[df2['Data zamowienia'].str.contains('2004')]['Utarg'].mean())
+#g
+print('g)')
+order_2004 = df2[df2['Data zamowienia'].str.contains('2005')]
+order_2005 = df2[df2['Data zamowienia'].str.contains('2004')]
+
+order_2004.to_csv('zamowienia_2004.csv', index=False)
+order_2005.to_csv('zamowienia_2005.csv', index=False)
