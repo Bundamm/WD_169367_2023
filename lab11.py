@@ -14,15 +14,17 @@ import numpy as np
 # plt.show()
 
 #zad1
-# fig = plt.figure()
-# ax = fig.add_subplot(projection='3d')
-# t = np.linspace(0, 2* np.pi, 100)
-# z = t
-# x = np.sin(t)
-# y = 2* np.cos(t)
-# ax.plot(x,y,z,label='zadanie 1')
-# ax.legend()
-# plt.show()
+def wykres():
+    fig = plt.figure()
+    ax = fig.add_subplot(projection='3d')
+    t = np.linspace(0, 2* np.pi, 100)
+    z = t
+    x = np.sin(t)
+    y = 2* np.cos(t)
+    ax.plot(x,y,z,label='zadanie 1')
+    ax.legend()
+    plt.show()
+
 
 #zad2
 def punkty():
@@ -63,4 +65,30 @@ def plaszcz():
         fig.colorbar(surf,shrink=0.5, aspect=5)
         plt.show()
 
-plaszcz()
+# plaszcz()
+
+#zad4
+
+def slupek():
+    fig = plt.figure()
+    _x = np.arange(4)
+    _y = np.arange(5)
+    _xx, _yy = np.meshgrid(_x, _y)
+    x, y = _xx.ravel(), _yy.ravel()
+    top = x + y
+    bottom = np.zeros_like(top)
+    width = depth = 1
+    #w1
+    ax1 = fig.add_subplot(221,projection='3d')
+    ax1.bar3d(x,y,bottom,width,depth,top,shade=True,color='b')
+    ax2 = fig.add_subplot(222, projection='3d')
+    ax2.bar3d(x, y, bottom, width, depth, top, shade=False, color='g')
+    ax3 = fig.add_subplot(223, projection='3d')
+
+    ax3.bar3d(x, y, bottom, width, depth, top, shade=True, color='hotpink', alpha=0.5)
+    ax3.view_init(50,50)
+    ax4 = fig.add_subplot(224, projection='3d')
+    ax4.bar3d(x, y, bottom, width, depth, top, shade=False, color='darkred', alpha=0.2)
+    ax4.view_init(180,180)
+    plt.show()
+slupek()
