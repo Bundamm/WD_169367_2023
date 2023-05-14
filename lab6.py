@@ -46,7 +46,7 @@ h = df.groupby(['Plec', 'Imie', 'Rok'])['Liczba'].sum()
 print(h.loc[h.groupby(['Plec', 'Rok']).idxmax()])
 
 #zad3
-df2 = pd.read_csv('zamowienia.csv', delimiter=';')
+df2 = pd.read_csv('../../git_uwm/WD_169367_2023/zamowienia.csv', delimiter=';')
 #a
 print('a)')
 print(df2['Sprzedawca'].unique())
