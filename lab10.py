@@ -55,39 +55,39 @@ import pandas as pd
 
 #zad5
 
-# names = ['sepal length', 'sepal width', 'petal length', 'petal width', 'class']
-# ds = pd.read_csv('iris.data',names=names)
-# print(ds)
-# data = ds.iloc[:, :-1].values
-# x = data[:,0]
-# y = data[:,1]
-# sss = np.abs(data[:,0] - data[:,1])
-# col = np.random.randint(0,50,len(data))
-# plt.scatter(x,y, c=col, s=sss*5)
-# plt.colorbar()
-# plt.show()
+names = ['sepal length', 'sepal width', 'petal length', 'petal width', 'class']
+ds = pd.read_csv('iris.data',names=names)
+print(ds)
+data = ds.iloc[:, :-1].values
+x = data[:,0]
+y = data[:,1]
+sss = np.abs(data[:,0] - data[:,1])
+col = np.random.randint(0,50,len(data))
+plt.scatter(x,y, c=col, s=sss*5)
+plt.colorbar()
+plt.show()
 
 #zad6
-df = pd.read_excel('imiona.xlsx')
-up = df.groupby('Plec')['Liczba'].sum()
-plt.subplot(1,3,1)
-plt.bar(up.index,up.values, color=['red', 'blue'])
-plt.title('Ogólna ilość dzieci od płci')
-plt.subplot(1,3,2)
-up2 = df.groupby(['Plec','Rok'])['Liczba'].sum()
-plt.title('Ilość K i M w roku')
-k = up2.K
-m = up2.M
-plt.plot(k.index, k.values, 'r-', m.index, m.values, 'b-')
-plt.xticks(k.index, rotation=50)
-# plt.plot(up2.index, up2['K'], color='red',label='kobiety')
-# plt.plot(up2.index, up2['M'], color='blue',label='mężczyźni')
-plt.subplot(1,3,3)
-plt.title('Dzieci w roku')
-up3 = df.groupby('Rok')['Liczba'].sum()
-plt.bar(up3.index, up3.values, color='green')
-plt.tight_layout()
-plt.show()
+# df = pd.read_excel('imiona.xlsx')
+# up = df.groupby('Plec')['Liczba'].sum()
+# plt.subplot(1,3,1)
+# plt.bar(up.index,up.values, color=['red', 'blue'])
+# plt.title('Ogólna ilość dzieci od płci')
+# plt.subplot(1,3,2)
+# up2 = df.groupby(['Plec','Rok'])['Liczba'].sum()
+# plt.title('Ilość K i M w roku')
+# k = up2.K
+# m = up2.M
+# plt.plot(k.index, k.values, 'r-', m.index, m.values, 'b-')
+# plt.xticks(k.index, rotation=50)
+# # plt.plot(up2.index, up2['K'], color='red',label='kobiety')
+# # plt.plot(up2.index, up2['M'], color='blue',label='mężczyźni')
+# plt.subplot(1,3,3)
+# plt.title('Dzieci w roku')
+# up3 = df.groupby('Rok')['Liczba'].sum()
+# plt.bar(up3.index, up3.values, color='green')
+# plt.tight_layout()
+# plt.show()
 #
 # #zad7
 # def rzucaj(n):
